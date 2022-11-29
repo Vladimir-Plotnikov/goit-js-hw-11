@@ -1,0 +1,185 @@
+// .search-form {
+//     // background-image: url('/src/images/Pixabay-logo.svg');
+//     background-color: rgba(0, 0, 0, 0.5);
+//     padding-top: 15px;
+//     height: 80px;
+//     background-size: cover;
+//     display: flex;
+//     justify-content: flex-start;
+
+//     // & .logo>img {
+//     //     max-width: 50px;
+//     //     margin-left: 20px;
+//     // }
+
+//     &__form {
+//         margin-left: 20px;
+//         max-width: 700px;
+//         height: 40px;
+//         background: #444;
+//         background: rgba(0, 0, 0, 0.2);
+//         border-radius: 3px;
+//         border: 1px solid #fff;
+
+//         & input {
+//             max-width: 370px;
+//             padding: 10px 5px;
+//             float: left;
+//             color: #000;
+//             font-weight: 800;
+//             border: 0;
+//             background: transparent;
+//             border-radius: 3px 0 0 3px;
+
+//             &:focus {
+//                 outline: 0;
+//                 background: transparent;
+//             }
+//         }
+
+//         & button {
+//             position: relative;
+//             float: right;
+//             border: 0;
+//             padding: 0;
+//             cursor: pointer;
+//             height: 40px;
+//             width: 40px;
+//             color: #fff;
+//             background: transparent;
+//             border-left: 1px solid #fff;
+//             border-radius: 0 3px 3px 0;
+
+//             &:hover {
+//                 background: #fff;
+//                 color: #444;
+//             }
+
+//             &:active {
+//                 box-shadow: 0px 0px 12px 0px rgba(225, 225, 225, 1);
+//             }
+
+//             &:focus {
+//                 outline: 0;
+//             }
+//         }
+//     }
+// }
+
+.search-form {
+        box-sizing: border-box;
+        background-color: violet;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-image: url(https://cdn.pixabay.com/photo/2016/06/24/15/48/pattern-1477380_1280.png);
+        /* background-repeat: no-repeat; */
+        background-size: cover;
+    }
+
+    // a {
+    //     display: block;
+    //     text-decoration: none;
+    // }
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    *::before,
+    *::after {
+        box-sizing: inherit;
+    }
+
+    ul,
+    ol {
+        list-style: none;
+    }
+
+    // .container {
+    //     width: 1200px;
+    //     margin: 0 auto;
+    // }
+
+    .search-form {
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+    }
+
+    input {
+        width: 50%;
+        padding: 20px;
+        font-size: 32px;
+        font-style: italic;
+        border-radius: 10px;
+        outline-color: #3c4245;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .gallery__card {
+        border-color: #f6f6f6;
+        padding: 2px;
+        border: 1px solid #d4d7dd;
+        margin: 1px;
+        margin-bottom: 15px;
+    }
+
+    .gallery__card_photo {
+        object-fit: cover;
+    }
+
+    .gallery__card_photo-card {
+        height: 100%;
+        margin-bottom: 5px;
+        height: 280px;
+        object-fit: cover;
+    }
+
+    .stats {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .stats_item {
+        color: #5d5d5d;
+        border-color: #f6f6f6;
+        padding: 5px;
+        border: 1px solid #d4d7dd;
+        cursor: pointer;
+        border-radius: 3px;
+        width: 50px;
+        text-align: center;
+    }
+
+    .stats_item:hover,
+    .stats_item:focus {
+        color: #0b0b0d;
+        transform: scale(1.2);
+    }
+
+    .material-icons {
+        font-size: 28px;
+    }
+
+    .button {
+        text-transform: uppercase;
+        cursor: pointer;
+        padding: 20px;
+        // display: block;
+        margin: 0 auto;
+        border-radius: 10px;
+        font-size: 32px;
+        color: #e8e8e8;
+        background-color: #731e9d;
+        outline-color: #3c4245;
+        }
