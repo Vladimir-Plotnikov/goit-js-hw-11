@@ -8,39 +8,30 @@ const refs = {
 
 };
 
-const API_SOURCE = 'https://pixabay.com/api/'
+const API_SOURCE = 'https://pixabay.com/api/';
 const API_KEY = '?key=31700021-8a08f2640b9bfb55478a6fa5d&';
-const API_REQUEST = '&image_type=photo&orientation=horizontal&safesearch=true'
-const PAGE = '&page='
-const PER_PAGE = '&per_page=5'
-let PAG = 1
-const picName = ''
-
-
-
-console.dir(refs.galleryList);
-console.dir(refs.searchButton);
-console.dir(refs.searchForm);
+const API_REQUEST = '&image_type=photo&orientation=horizontal&safesearch=true';
+const PAGE = '&page=';
+const PER_PAGE = '&per_page=5';
+let PAG = 1;
+const picName = '';
 
 refs.searchForm.addEventListener('submit', onSearch)
 refs.loadButton.addEventListener('click', loadMore)
 
 // ========== load more BUTTON ==================
-
 function loadMore(e) {
     e.preventDefault();
-    PAG +=1;
-    fetchPics(picName)
+    PAG += 1;
     console.log(PAG);
+   fetchPics(picName)
 }
-
 // ===========================
 
 
 function onSearch(e) {
     e.preventDefault();
     const form = e.currentTarget;
-    // refs.galleryList.innerHTML('')
     const picName = form.elements.searchQuery.value
     console.dir(fetchPics(picName));
 }
@@ -90,6 +81,7 @@ function fetchPics(picName) {
         }
         )
 }
+
 
 
 // console.log('qweqwe');
