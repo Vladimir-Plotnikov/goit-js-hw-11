@@ -119,6 +119,7 @@
         border-radius: 10px;
         outline-color: #3c4245;
     }
+ 
 
     .gallery {
         display: flex;
@@ -170,16 +171,16 @@
     .material-icons {
         font-size: 28px;
     }
-
-    .button {
-        text-transform: uppercase;
-        cursor: pointer;
-        padding: 20px;
-        // display: block;
-        margin: 0 auto;
-        border-radius: 10px;
-        font-size: 32px;
-        color: #e8e8e8;
-        background-color: #731e9d;
-        outline-color: #3c4245;
-        }
+           .button {
+    
+               text-transform: uppercase;
+               cursor: pointer;
+               padding: 20px;
+               // display: block;
+               margin: 0 auto;
+               border-radius: 10px;
+               font-size: 32px;
+               color: #e8e8e8;
+               background-color: #731e9d;
+               outline-color: #3c4245;
+           }
