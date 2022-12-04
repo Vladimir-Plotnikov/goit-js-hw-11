@@ -29,16 +29,19 @@ function loadMore(e) {
 }
 // ===========================
 
+// ========== Search BUTTON ==================
 
 function onSearch(e) {
     e.preventDefault();
+    refs.galleryList.innerHTML = '';
     const form = e.currentTarget;
     picName = form.elements.searchQuery.value;
     console.dir(fetchPics(picName));
 }
+// ===========================
+
 
 async function fetchPics(picName) {
-    console.dir(fetch);
     const response = await fetch(`${API_SOURCE}${API_KEY}q=${picName}${API_REQUEST}${PAGE}${PAG}${PER_PAGE}`);
     if (!response.ok) {
         console.log('error');
@@ -49,7 +52,7 @@ async function fetchPics(picName) {
         const picItems = picInfo.hits[key];
         const { webformatURL, largeImageURL, tags, likes, views, comments, downloads } = picItems;
         const markUpList = `<div class="photo-card">
-  <img src="${webformatURL}" alt="${tags}" loading="lazy" />
+  <img src="${webformatURL}" alt="${tags}" loading="lazy" class="img-item" />
   <div class="info">
     <p class="info-item">
       <b>Likes ${likes}</b>
@@ -67,20 +70,22 @@ async function fetchPics(picName) {
 </div>`;
         refs.galleryList.insertAdjacentHTML('beforeend', markUpList);
     }
+  
     totalDownloads += picInfo.hits.length;
-    // ========== if api send nothing it will return message ============
+ 
+    // ========== what if api do something ============
+
     if (picInfo.hits.length === 0) {
         refs.loadButton.classList.remove('is-visible');
-        return Notiflix.Notify.failure('шось нічого не має!');
+        return Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.');
     }
     if (totalDownloads > picInfo.totalHits) {
         refs.loadButton.classList.remove('is-visible');
-        return Notiflix.Notify.failure('то мабуть кінець!');
+        return Notiflix.Notify.failure("We're sorry, but you've reached the end of search results.");
 
     }
-    // }
     refs.loadButton.classList.add('is-visible');
-    Notiflix.Notify.success('ВАААУУУ');
+    // Notiflix.Notify.success('ВАААУУУ');
 }
 
 // console.log('qweqwe');
