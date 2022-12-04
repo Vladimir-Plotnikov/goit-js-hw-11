@@ -32,6 +32,7 @@ function loadMore(e) {
 
 function onSearch(e) {
     e.preventDefault();
+    PAG = 1;
     refs.galleryList.innerHTML = '';
     const form = e.currentTarget;
     picName = form.elements.searchQuery.value;
