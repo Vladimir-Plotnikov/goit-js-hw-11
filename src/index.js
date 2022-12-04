@@ -6,7 +6,6 @@ const refs = {
     searchButton: document.querySelector('.button'),
     galleryList: document.querySelector('.gallery'),
     loadButton: document.querySelector('.load-more')
-
 };
 
 const API_SOURCE = 'https://pixabay.com/api/';
@@ -46,8 +45,9 @@ async function fetchPics(picName) {
     if (!response.ok) {
         console.log('error');
     }
+
+
     const picInfo = await response.json();
-    // console.dir(picInfo.hits.length);
     for (const key in picInfo.hits) {
         const picItems = picInfo.hits[key];
         const { webformatURL, largeImageURL, tags, likes, views, comments, downloads } = picItems;
@@ -70,10 +70,9 @@ async function fetchPics(picName) {
 </div>`;
         refs.galleryList.insertAdjacentHTML('beforeend', markUpList);
     }
-  
     totalDownloads += picInfo.hits.length;
  
-    // ========== what if api do something ============
+    // ========== do something with api ============
 
     if (picInfo.hits.length === 0) {
         refs.loadButton.classList.remove('is-visible');
