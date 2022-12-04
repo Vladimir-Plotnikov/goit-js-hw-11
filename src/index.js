@@ -35,19 +35,19 @@ function onSearch(e) {
     refs.galleryList.innerHTML = '';
     const form = e.currentTarget;
     picName = form.elements.searchQuery.value;
-    console.dir(fetchPics(picName));
+    fetchPics(picName);
 }
 // ===========================
 
 
 async function fetchPics(picName) {
-    const response = await fetch(`${API_SOURCE}${API_KEY}q=${picName}${API_REQUEST}${PAGE}${PAG}${PER_PAGE}`);
-    if (!response.ok) {
-        console.log('error');
-    }
+    const response = await axios.get(`${API_SOURCE}${API_KEY}q=${picName}${API_REQUEST}${PAGE}${PAG}${PER_PAGE}`);
 
+    // if (!response.ok) {
+    //     console.log('error');
+    // }
 
-    const picInfo = await response.json();
+    const picInfo = response.data;
     for (const key in picInfo.hits) {
         const picItems = picInfo.hits[key];
         const { webformatURL, largeImageURL, tags, likes, views, comments, downloads } = picItems;
@@ -84,7 +84,4 @@ async function fetchPics(picName) {
 
     }
     refs.loadButton.classList.add('is-visible');
-    // Notiflix.Notify.success('ВАААУУУ');
 }
-
-// console.log('qweqwe');
