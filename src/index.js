@@ -43,10 +43,6 @@ function onSearch(e) {
 async function fetchPics(picName) {
     const response = await axios.get(`${API_SOURCE}${API_KEY}q=${picName}${API_REQUEST}${PAGE}${PAG}${PER_PAGE}`);
 
-    // if (!response.ok) {
-    //     console.log('error');
-    // }
-
     const picInfo = response.data;
     for (const key in picInfo.hits) {
         const picItems = picInfo.hits[key];
